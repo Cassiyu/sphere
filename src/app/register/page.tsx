@@ -9,7 +9,7 @@ export default function Home() {
       </nav>
 
       <aside className="h-screen overflow-hidden hidden lg:block">
-        <img src="/circles-image.png" alt="imagem de login" />
+        <img src="/login.png" alt="imagem de login" />
       </aside>
 
       <section className="flex flex-col items-center w-full gap-8">
