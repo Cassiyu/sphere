@@ -1,4 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 
 export default function Home() {
@@ -9,7 +12,7 @@ export default function Home() {
       </nav>
 
       <aside className="h-screen overflow-hidden hidden lg:block">
-        <img src="/circles-image.png" alt="imagem de login" />
+        <img src="/circles-image.png" alt="imagem de circulos" />
       </aside>
 
       <section className="flex flex-col items-center w-full gap-8">
@@ -17,11 +20,54 @@ export default function Home() {
           <circle cx="37.5" cy="37.5" r="37.5" fill="#E11D48" />
         </svg>
 
-        <h1 className="text-4xl font-extrabold uppercase">Sphere</h1>
-        <Button>entrar</Button>
+        <h1 className="text-4xl font-extrabold uppercase" >Sphere</h1>
+
+        <Tabs defaultValue="entrar">
+          <TabsList>
+            <TabsTrigger value="entrar">entrar</TabsTrigger>
+            <TabsTrigger value="registrar">registrar</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="entrar">
+            <form>
+              <div>
+                <Label htmlFor="email">email</Label>
+                <Input id="email" placeholder="email@servidor.com" />
+              </div>
+              <div>
+                <Label htmlFor="senha">senha</Label>
+                <Input id="senha" type="password" />
+              </div>
+
+              <Button>entrar</Button>
+            </form>
+          </TabsContent>
+
+          <TabsContent value="registrar">
+            <form>
+              <div>
+                <Label htmlFor="nome">nome</Label>
+                <Input id="nome"/>
+              </div>
+              <div>
+                <Label htmlFor="bio">bio</Label>
+                <Input id="bio"/>
+              </div>
+              <div>
+                <Label htmlFor="email">email</Label>
+                <Input id="email" placeholder="email@servidor.com" />
+              </div>
+              <div>
+                <Label htmlFor="senha">senha</Label>
+                <Input id="senha" type="password" />
+              </div>
+              <Button>criar conta</Button>
+            </form>
+          </TabsContent>
+
+        </Tabs>
 
       </section>
-
     </main>
   );
 }
