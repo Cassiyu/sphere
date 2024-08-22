@@ -1,3 +1,4 @@
+import RegisterForm from "@/components/register-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -29,39 +30,18 @@ export default function Home() {
           </TabsList>
 
           <TabsContent value="entrar">
-            <form>
-              <div>
-                <Label htmlFor="email">email</Label>
-                <Input id="email" placeholder="email@servidor.com" />
-              </div>
-              <div>
-                <Label htmlFor="senha">senha</Label>
-                <Input id="senha" type="password" />
-              </div>
-
-              <Button>entrar</Button>
+            <form action="" className="space-y-2">
+              <Label htmlFor="email">email</Label>
+              <Input id="email" />
+              <Label htmlFor="senha">senha</Label>
+              <Input id="senha" type="password" />
+              <Button type="submit">entrar</Button>
             </form>
           </TabsContent>
 
           <TabsContent value="registrar">
-            <form>
-              <div>
-                <Label htmlFor="nome">nome</Label>
-                <Input id="nome"/>
-              </div>
-              <div>
-                <Label htmlFor="bio">bio</Label>
-                <Input id="bio"/>
-              </div>
-              <div>
-                <Label htmlFor="email">email</Label>
-                <Input id="email" placeholder="email@servidor.com" />
-              </div>
-              <div>
-                <Label htmlFor="senha">senha</Label>
-                <Input id="senha" type="password" />
-              </div>
-              <Button>criar conta</Button>
+            <form action="" className="space-y-2">
+              <RegisterForm />
             </form>
           </TabsContent>
 
